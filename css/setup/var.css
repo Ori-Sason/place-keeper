@@ -1,0 +1,8 @@
+:root {
+  --primary-clr-200: rgb(243, 220, 255);
+  --primary-clr-500: rgb(68, 27, 108);
+  --primary-clr-700: rgb(59, 16, 108);
+  --primary-clr-800: rgb(16, 0, 43);
+
+  --delete-btn-clr: rgba(221, 59, 114, 0.91);
+}

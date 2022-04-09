@@ -1,0 +1,66 @@
+.main-content {
+  flex-grow: 1;
+}
+
+.main-content > main {
+  gap: 2em;
+  margin-bottom: 2em;
+}
+
+.map-container {
+  height: 100%;
+  position: relative;
+  color: var(--primary-clr-700);
+}
+
+.map {
+  height: 400px;
+  aspect-ratio: 1/1;
+  border-radius: 8px;
+  box-shadow: 2px -1px 50px -10px var(--primary-clr-200);
+}
+
+.my-location {
+  position: absolute;
+  left: 10px;
+  bottom: 30px;
+  height: 40px;
+  aspect-ratio: 1/1;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.saved-locations {
+  flex-grow: 1;
+  margin-bottom: 1em;
+}
+
+.locations-list > * {
+  padding: 0.5em 1em;
+  margin-bottom: 0.6em;
+  background-color: var(--primary-clr-500);
+  border-radius: 5px;
+  box-shadow: 1px -1px 4.5px var(--primary-clr-200);
+  cursor: pointer;
+}
+
+.locations-list > *:hover {
+  background-color: var(--primary-clr-700);
+}
+
+.locations-list > * button {
+  height: 2em;
+  aspect-ratio: 1/1;
+  background-color: var(--primary-clr-200);
+  border-radius: 50%;
+}
+
+.locations-list > * button:hover {
+  color: var(--primary-clr-200);
+  background-color: var(--delete-btn-clr);
+}
+
+.saved-locations h2,
+.instructions h2 {
+  margin-bottom: 1em;
+}

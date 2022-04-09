@@ -1,0 +1,62 @@
+@media screen and (min-width: 960px) {
+  .main-header > div {
+    padding-inline-start: 4em;
+    flex-direction: row;
+  }
+
+  .main-header .main-nav > * {
+    width: 7em;
+  }
+
+  .main-layout {
+    max-width: 750px;
+    margin-inline-start: 60px;
+  }
+
+  /* index page */
+  .main-title {
+    text-align: center;
+    margin-bottom: 3em;
+  }
+
+  .main-title h1 {
+    font-size: 4em;
+  }
+
+  .main-title img {
+    width: unset;
+  }
+
+  .side-note{
+    font-size: 1.5em;
+  }
+
+  /* map page */
+  .main-content > main {
+    flex-direction: row;
+  }
+
+  /* settings page*/
+  .setting-list .colors {
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 1290px) {
+  /* map page */
+  .main-layout {
+    max-width: 1000px;
+  }
+
+  .main-content main {
+    gap: 4em;
+  }
+
+  .map {
+    height: 600px;
+  }
+
+  .locations-list > * {
+    font-size: 1.5em;
+  }
+}

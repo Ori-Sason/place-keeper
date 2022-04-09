@@ -1,0 +1,16 @@
+body {
+  color: var(--primary-clr-200);
+  background-color: var(--primary-clr-800);
+}
+
+.full-container{
+  min-height: 100vh;
+}
+
+.main-content{
+  flex-grow: 1;
+}
+
+.main-footer{
+  padding: 1em 0;
+}

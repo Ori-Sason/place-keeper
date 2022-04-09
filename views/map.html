@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <title>Place Keeper</title>
+  </head>
+  <body onload="onInit()">
+    
+    <div class="full-container flex flex-column">
+      
+      <header class="main-header">
+        <div class="main-layout flex flex-column justify-between align-center">
+          <div class="logo"><a href="/">Keep Places</a></div>
+          <ul class="main-nav flex">
+            <li><a class="flex-center-text" href="/">Home</a></li>
+            <li><a class="flex-center-text" href="/views/map.html">Map</a></li>
+            <li>
+              <a class="flex-center-text" href="/views/user-settings.html">Settings</a>
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <div class="main-content main-layout flex flex-column">
+        <main class="flex flex-column justify-start">
+          <section class="map-container">
+            <div class="map"></div>
+            <img
+              class="my-location"
+              src="../img/my-location.png"
+              onclick="onUserLocation()"
+            />
+          </section>
+          <div class="flex flex-column justify-between">
+            <section class="saved-locations">
+              <div class="flex justify-between">
+                <h2>Saved locations</h2>
+                <a
+                  href="#"
+                  onclick="onDownloadCSV(this)"
+                  download="locations-data.csv"
+                  >&#11123; CSV</a
+                >
+              </div>
+              <ul class="locations-list">
+                <!-- locations are rendered here -->
+              </ul>
+            </section>
+            <section class="instructions">
+              <h2>Instructions</h2>
+              <ul class="ul-decorated">
+                <li>Ctrl + Scroll to zoom in the map.</li>
+                <li>Double-click to mark and store location.</li>
+                <li>Click 🎯 on the map to get your location on the screen.</li>
+                <li>Click 🎯 on the list aside to get to location.</li>
+              </ul>
+            </section>
+          </div>
+        </main>
+      </div>
+
+      <footer class="main-footer main-layout">
+        <p>☕ Coffeerights 2022 Ori Sason, nothing reserved</p>
+      </footer>
+    </div>
+
+    <script src="../js/services/util-service.js"></script>
+    <script src="../js/services/storage-service.js"></script>
+    <script src="../js/services/setting-service.js"></script>
+    <script src="../js/services/map-service.js"></script>
+    <script src="../js/controllers/colors.js"></script>
+    <script src="../js/controllers/map.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2Na7Kx7swW4SPkbgj4slrnEPVg8EQ47Q&callback=initMap&v=weekly"
+      async
+    ></script>
+  </body>
+</html>

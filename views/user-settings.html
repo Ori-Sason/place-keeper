@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <title>Place Keeper</title>
+  </head>
+
+  <body onload="onInit()">
+    <div class="full-container flex flex-column">
+      <header class="main-header">
+        <div class="main-layout flex flex-column justify-between align-center">
+          <div class="logo"><a href="/">Keep Places</a></div>
+          <ul class="main-nav flex">
+            <li><a class="flex-center-text" href="/">Home</a></li>
+            <li><a class="flex-center-text" href="/views/map.html">Map</a></li>
+            <li>
+              <a class="flex-center-text" href="/views/user-settings.html">Settings</a>
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <div class="main-content main-layout">
+        <main>
+          <h1>⚙ Settings</h1>
+          <form onsubmit="onSaveSettings(event)">
+            <ul class="setting-list ul-decorated">
+              <li>
+                <label for="form-email">Email</label>
+                <input type="email" name="form-email" id="form-email" placeholder="email@email.com" required
+                />
+              </li>
+              <li>
+                <div class="colors flex align-center">
+                <label for="form-age">Age</label>
+                <input type="range" name="form-age" id="form-age" min="18" max="120" value="25"
+                  oninput="onInputAgeChange(this.value)"
+                />
+                <span class="form-age-span"></span>
+              </div>
+              </li>
+              <li>
+                <label for="form-gender">Gender</label>
+                <select name="form-gender" id="form-gender">
+                  <option value="male">Male &male;</option>
+                  <option value="female">Female &female;</option>
+                </select>
+              </li>
+
+              <!-- add visibility to current value -->
+              <h2>Colors</h2>
+
+              <li>
+                <div class="colors flex flex-column">
+                  <label for="form-bg-clr">Set Background Color</label>
+                  <div class="colors-input flex">
+                    <input type="color" name="form-bg-clr" id="form-bg-clr" oninput="changeBgClr(this.value)"/>
+                    <input type="button" onclick="onLastSavedClr('bg-clr', 'bgClr')" value="Last saved"/>
+                    <input type="button" onclick="onDefaultClr('bg-clr', 'bgClr')" value="Default"/>
+                  </div>                  
+                </div>
+              </li>
+
+              <li>
+                <div class="colors flex flex-column">
+                  <label for="form-txt-clr">Set text Color</label>
+                  <div class="colors-input flex">
+                    <input type="color" name="form-txt-clr" id="form-txt-clr" oninput="changeTxtClr(this.value)"/>
+                    <input type="button" onclick="onLastSavedClr('txt-clr', 'txtClr')" value="Last saved"/>
+                    <input type="button" onclick="onDefaultClr('txt-clr', 'txtClr')" value="Default"/>
+                  </div>
+                </div>
+              </li>
+
+              <h2>Birth Date</h2>
+              <li>
+                <label for="form-bday">Birth Date</label>
+                <input type="date" name="form-bday" id="form-bday" />
+              </li>
+
+              <li>
+                <label for="form-btime">Birth Time</label>
+                <input type="time" name="form-btime" id="form-btime" />
+              </li>
+            </ul>
+
+            <input type="submit" value="Save">
+            <span class="submit-notice">Settings were saved to storage</span>
+          </form>
+        </main>
+      </div>
+
+      <footer class="main-footer main-layout">
+        <p>☕ Coffeerights 2022 Ori Sason, nothing reserved</p>
+      </footer>
+    </div>
+
+    <script src="../js/services/util-service.js"></script>
+    <script src="../js/services/storage-service.js"></script>
+    <script src="../js/services/setting-service.js"></script>
+    <script src="../js/controllers/colors.js"></script>
+    <script src="../js/controllers/settings.js"></script>
+  </body>
+</html>
