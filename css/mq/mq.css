@@ -36,6 +36,10 @@
     flex-direction: row;
   }
 
+  .map {
+    height: 400px;
+  }
+
   /* settings page*/
   .setting-list .colors {
     flex-direction: row;

@@ -8,6 +8,20 @@
     <title>Place Keeper</title>
   </head>
   <body onload="onInit()">
+
+    <div class="backlog" onclick="closeNewLocationModal()"></div>
+    <div class="map-form">
+      <form class="flex flex-column" onsubmit="onAddNewLocation(event)">
+        <h2>Add location</h2>
+        <ul>
+          <li>
+            <label for="location-name">Location name</label>
+            <input type="text" name="name" id="location-name" placeholder="New location name" required>
+          </li>
+        </ul>
+        <button class="form-submit-btn" type="submit">Add</button>
+      </form>
+    </div>
     
     <div class="full-container flex flex-column">
       

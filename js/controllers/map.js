@@ -2,6 +2,7 @@
 
 const gMarkers = []
 let gMap
+let gSelectedPos = null
 
 function onInit() {
   setColorsBySettings()
@@ -29,7 +30,10 @@ function initMap() {
 
   //double-click event
   //https://developers.google.com/maps/documentation/javascript/events
-  gMap.addListener('dblclick', (ev) => newLocation(ev.latLng))
+  gMap.addListener('dblclick', (ev) => {
+    gSelectedPos = ev.latLng
+    openNewLocationModal()
+  })
 }
 
 function onUserLocation() {
@@ -68,14 +72,26 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   infoWindow.open(map)
 }
 
-function newLocation(pos) {
-  const name = prompt('Enter a name to the location')
-  if (!name) return
+function openNewLocationModal() {
+  document.body.classList.add('open-modal')
+}
 
-  goToLocation(pos)
-  storeLocation(name, pos.lat(), pos.lng())
-  createMarker(pos)
+function closeNewLocationModal() {
+  document.body.classList.remove('open-modal')
+  document.querySelector('.map-form input[type="text"]').value = ''
+  gSelectedPos = null
+}
+
+function onAddNewLocation(ev) {
+  ev.preventDefault()
+  const name = ev.target[0].value.trim()
+  if (!name) return closeNewLocationModal()
+
+  goToLocation(gSelectedPos)
+  storeLocation(name, gSelectedPos.lat(), gSelectedPos.lng())
+  createMarker(gSelectedPos)
   renderLocations()
+  closeNewLocationModal()
 }
 
 function createMarker(pos) {

@@ -14,7 +14,7 @@
 }
 
 .map {
-  height: 400px;
+  height: 360px;
   aspect-ratio: 1/1;
   border-radius: 8px;
   box-shadow: 2px -1px 50px -10px var(--primary-clr-200);
@@ -64,3 +64,65 @@
 .instructions h2 {
   margin-bottom: 1em;
 }
+
+.backlog{
+  display: none;
+  position: absolute;
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+  min-width: 420px;
+  background-color: rgba(0, 0, 0, 0.705);
+}
+
+.map-form {
+  display: none;
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  padding: 2em;
+  width: 300px;
+  border: 2px solid var(--primary-clr-700);
+  border-radius: 8px;
+  background-color: var(--primary-clr-800);
+  box-shadow: 2px -1px 50px -10px var(--primary-clr-200);
+}
+
+body.open-modal .backlog{
+  display: block;
+}
+
+body.open-modal .map-form{
+  display: block;
+}
+
+.map-form > form {
+  gap: 1.5em;
+}
+
+.map-form h2 {
+  text-transform: capitalize;
+}
+
+.map-form label {
+  display: block;
+  margin-bottom: 0.8em;
+}
+
+.map-form input[type='text'] {
+  width: 100%;
+  padding: 0.5em;
+}
+
+.map-form .form-submit-btn {
+  align-self: flex-end;
+  margin: 0;
+}
+
+.map-form .form-submit-btn:hover {
+  border-width: 1px;
+  box-shadow: 2px -1px 30px -10px var(--primary-clr-200);
+}
+
